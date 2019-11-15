@@ -1,18 +1,18 @@
 <template>
   <div class="main">
     <transition name="content_area">
-      <openingText />
+      <ContactForm />
     </transition>
   </div>
 </template>
 
 <script>
-import OpeningText from '~/components/OpeningText.vue'
+import ContactForm from '~/components/ContactForm.vue'
 
 export default {
   layout: 'SideMenu',
   components: {
-    OpeningText
+    ContactForm
   }
 }
 </script>

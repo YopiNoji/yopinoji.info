@@ -1,18 +1,18 @@
 <template>
   <div class="main">
     <transition name="content_area">
-      <openingText />
+      <About />
     </transition>
   </div>
 </template>
 
 <script>
-import OpeningText from '~/components/OpeningText.vue'
+import About from '~/components/About.vue'
 
 export default {
   layout: 'SideMenu',
   components: {
-    OpeningText
+    About
   }
 }
 </script>

@@ -3,28 +3,13 @@
     <nav class="navigation">
       <ul class="navigation-ul">
         <li class="navigation-li">
-          <button
-            class="navigation-button"
-            @click="$store.dispatch('WatchingContent/onTop')"
-          >
-            TOP
-          </button>
+          <nuxt-link to="/">TOP</nuxt-link>
         </li>
         <li class="navigation-li">
-          <button
-            class="navigation-button"
-            @click="$store.dispatch('WatchingContent/onAbout')"
-          >
-            About
-          </button>
+          <nuxt-link to="/about">ABOUT</nuxt-link>
         </li>
         <li class="navigation-li">
-          <button
-            class="navigation-button"
-            @click="$store.dispatch('WatchingContent/onContact')"
-          >
-            Contact
-          </button>
+          <nuxt-link to="/contact">CONTACT</nuxt-link>
         </li>
       </ul>
     </nav>
@@ -40,8 +25,6 @@ export default {}
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Cinzel&display=swap');
-
 .navigation {
   z-index: 100;
   position: fixed;
@@ -59,18 +42,17 @@ export default {}
   text-align: center;
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
-  padding: 20px 0px;
+  padding: 25px 0px;
   list-style: none;
-  transition: 0.5s ease-in-out;
+  transition: 0.35s ease-out;
 }
 .navigation-li:hover {
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
 }
-.navigation-button {
-  border: none;
-  opacity: 0.9;
-  background: rgba(0, 0, 0, 0);
+.navigation-li a {
+  text-decoration: none;
+  color: #000;
 }
 
 .copyright {
