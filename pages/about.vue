@@ -46,11 +46,13 @@
             <h3 slot="header">SKILLS</h3>
             <div slot="body">
               <h3>Framework</h3>
-              <li>Laravel</li>
-              <li>Nuxt.js</li>
               <li>Vue.js</li>
-              <li>WordPress</li>
-              <li>JQuery</li>
+              <li>Nuxt.js</li>
+              <li>React.js</li>
+              <li>Laravel</li>
+              <h3>Middleware</h3>
+              <li>Vuex</li>
+              <li>GraphQl</li>
               <h3>Tool</h3>
               <li>Git</li>
               <h3>Service</h3>
