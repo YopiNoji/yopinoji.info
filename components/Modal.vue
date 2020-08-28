@@ -20,10 +20,7 @@
 
 <script>
 export default {
-  name: 'Modal',
-  props: {
-    val: Object
-  }
+  name: 'Modal'
 }
 </script>
 
