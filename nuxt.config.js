@@ -1,10 +1,13 @@
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
   head: {
     title: 'YOPINOJI.INFO',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -13,7 +16,11 @@ export default {
         name: 'description',
         content: 'YOPINOJI.INFO'
       },
-      { hid: 'og:site_name', property: 'og:site_name', content: 'YOPINOJI.INFO' },
+      {
+        hid: 'og:site_name',
+        property: 'og:site_name',
+        content: 'YOPINOJI.INFO'
+      },
       { hid: 'og:type', property: 'og:type', content: 'YOPINOJI.INFO' },
       { hid: 'og:url', property: 'og:url', content: 'https://yopinoji.info' },
       { hid: 'og:title', property: 'og:title', content: 'YOPINOJI.INFO' },
@@ -25,7 +32,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: ''
+        content: '/yopinoji.png'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
