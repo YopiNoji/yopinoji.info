@@ -1,0 +1,47 @@
+# Firebaseへの自動デプロイ
+name: Deploy to Firebase
+
+# develop ブランチの更新を検知して動くという記述
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  firebase-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 最新のブランチをチェックアウト
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Nuxt.js ように Node.js をセットアップ
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+
+      # Nuxt.js のビルドに .env を使用している場合、.env をサンプルから作成
+      - name: Copy .env
+        run: cp .env.example .env
+
+      # Nuxt.js 依存性パッケージをインストール
+      - name: npm install in Nuxt.js
+        run: npm i
+
+      # Nuxt.js で静的サイトを生成
+      - name: Nuxt generate
+        run: npm run generate
+
+      # Firebase 依存性パッケージインストールs
+      - name: npm install in Firebase
+        run: cd functions && npm i
+
+      # Firebase へデプロイ
+      - name: deploy to Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          PROJECT_ID: your-firebase-project-id
