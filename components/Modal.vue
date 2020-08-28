@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask" @click="$emit('close')">
+    <div @click="$emit('close')" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
@@ -9,7 +9,7 @@
           <div class="modal-body">
             <slot name="body"></slot>
           </div>
-          <button class="modal-button" @click="$emit('close')">
+          <button @click="$emit('close')" class="modal-button">
             OK
           </button>
         </div>
@@ -62,7 +62,7 @@ export default {
 .modal-body {
   max-height: 80%;
   max-width: 80%;
-  overflow: scroll;
+  overflow: hidden;
   line-height: 1.5rem;
   margin: 0 auto;
 }

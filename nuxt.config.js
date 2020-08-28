@@ -8,6 +8,7 @@ export default {
     htmlAttrs: {
       lang: 'ja'
     },
+    noscript: [{ innerHTML: 'This website requires JavaScript.' }],
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -73,6 +74,29 @@ export default {
    ** Build configuration
    */
   build: {
+    // analyze: true,
+    extractCSS: {
+      ignoreOrder: true
+    },
+    // optimization: {
+    //   removeEmptyChunks: true,
+    //   minimize: true,
+    //   splitChunks: {
+    //     chunks: 'all',
+    //     automaticNameDelimiter: '.',
+    //     name: undefined,
+    //     cacheGroups: {
+    //       styles: {
+    //         name: 'styles',
+    //         test: /\.(css|vue)$/,
+    //         chunks: 'all',
+    //         enforce: true
+    //       }
+    //     }
+    //   }
+    // },
+    // hardSource: true,
+    transpile: ['vee-validate/dist/rules'],
     /*
      ** You can extend webpack config here
      */
