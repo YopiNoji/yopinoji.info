@@ -1,11 +1,11 @@
 # Firebaseへの自動デプロイ
 name: Deploy to Firebase
 
-# develop ブランチの更新を検知して動くという記述
+# master ブランチの更新を検知して動くという記述
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   firebase-deploy:
