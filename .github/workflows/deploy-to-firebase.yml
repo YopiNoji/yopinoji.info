@@ -33,10 +33,6 @@ jobs:
       - name: Nuxt generate
         run: npm run generate
 
-      # Firebase 依存性パッケージインストールs
-      - name: npm install in Firebase
-        run: cd functions && npm i
-
       # Firebase へデプロイ
       - name: deploy to Firebase
         uses: w9jds/firebase-action@master
