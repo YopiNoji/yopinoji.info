@@ -87,8 +87,7 @@ export default {
 .opening_text {
   letter-spacing: 20px;
   color: #000;
-  transition: 2s ease-in-out;
-  font-family: 'Cinzel', serif;
+  font-weight: lighter;
   font-size: 40px;
   display: inline-block;
   line-height: 80px;
@@ -96,10 +95,6 @@ export default {
   -moz-transform: skewY(-10deg) scaleX(0.5);
   -o-transform: skewY(-10deg) scaleX(0.5);
   transform: skewY(-10deg) scaleX(0.5);
-  -webkit-text-shadow: 0 0 20px #333;
-  -moz-text-shadow: 0 0 20px #333;
-  -o-text-shadow: 0 0 20px #333;
-  text-shadow: 0 0 20px #333;
 }
 .opening_text:after {
   clear: both;
