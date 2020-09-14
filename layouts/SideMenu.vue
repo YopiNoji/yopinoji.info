@@ -17,11 +17,29 @@
     <div class="copyright">
       <span>© 2019 YOPINOJI</span>
     </div>
+    <div class="link">
+      <a class="icon" href="https://github.com/YopiNoji" target="_blank">
+        <fa :icon="faGithub" />
+      </a>
+      <a class="icon" href="https://twitter.com/YopiNoji" target="_blank">
+        <fa :icon="faTwitter" />
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+export default {
+  computed: {
+    faGithub() {
+      return faGithub
+    },
+    faTwitter() {
+      return faTwitter
+    }
+  }
+}
 </script>
 
 <style>
@@ -62,5 +80,16 @@ export default {}
   transform: rotate(90deg);
   font-size: 10px;
   height: 10px;
+}
+
+.link {
+  position: fixed;
+  bottom: 2%;
+  left: 50%;
+  margin-right: 50%;
+  font-size: 20px;
+}
+.icon {
+  padding: 5px;
 }
 </style>

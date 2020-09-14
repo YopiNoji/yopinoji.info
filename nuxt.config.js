@@ -1,3 +1,4 @@
+const prod = process.env.NODE_ENV === 'production'
 export default {
   mode: 'spa',
   /*
@@ -49,7 +50,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/firebase'],
+  // plugins: ['~/plugins/firebase'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -63,8 +64,22 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    'nuxt-fontawesome'
   ],
+  /*
+   ** font awesome module configuration
+   ** See https://www.npmjs.com/package/nuxt-fontawesome
+   */
+  fontawesome: {
+    component: 'fa',
+    imports: [
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: ['fab']
+      }
+    ]
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
@@ -74,27 +89,25 @@ export default {
    ** Build configuration
    */
   build: {
-    // analyze: true,
-    extractCSS: {
-      ignoreOrder: true
+    analyze: true,
+    extractCSS: prod,
+    optimization: {
+      removeEmptyChunks: prod,
+      minimize: prod,
+      splitChunks: {
+        chunks: 'all',
+        automaticNameDelimiter: '.',
+        name: undefined,
+        cacheGroups: {
+          styles: {
+            name: 'styles',
+            test: /\.(css|vue)$/,
+            chunks: 'all',
+            enforce: true
+          }
+        }
+      }
     },
-    // optimization: {
-    //   removeEmptyChunks: true,
-    //   minimize: true,
-    //   splitChunks: {
-    //     chunks: 'all',
-    //     automaticNameDelimiter: '.',
-    //     name: undefined,
-    //     cacheGroups: {
-    //       styles: {
-    //         name: 'styles',
-    //         test: /\.(css|vue)$/,
-    //         chunks: 'all',
-    //         enforce: true
-    //       }
-    //     }
-    //   }
-    // },
     // hardSource: true,
     transpile: ['vee-validate/dist/rules'],
     /*
