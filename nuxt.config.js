@@ -52,9 +52,9 @@ export default {
    */
   // plugins: ['~/plugins/firebase'],
   /*
-   ** Nuxt.js dev-modules
+   ** Nuxt.js buildModules
    */
-  devModules: [
+  buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module'
   ],
