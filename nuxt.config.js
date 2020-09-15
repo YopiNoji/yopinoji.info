@@ -97,15 +97,15 @@ export default {
       splitChunks: {
         chunks: 'all',
         automaticNameDelimiter: '.',
-        name: undefined,
-        cacheGroups: {
-          styles: {
-            name: 'styles',
-            test: /\.(css|vue)$/,
-            chunks: 'all',
-            enforce: true
-          }
-        }
+        name: undefined
+        // cacheGroups: {
+        //   styles: {
+        //     name: 'styles',
+        //     test: /\.(css|vue)$/,
+        //     chunks: 'all',
+        //     enforce: true
+        //   }
+        // }
       }
     },
     // hardSource: true,
