@@ -4,7 +4,6 @@ ENV HOST 0.0.0.0
 
 WORKDIR /usr/src
 COPY ./package.json .
-RUN npm install \
-    && npm cache clean --force
-# COPY . .
+RUN npm install
+COPY . .
 # CMD ["npm", "run", "dev"]

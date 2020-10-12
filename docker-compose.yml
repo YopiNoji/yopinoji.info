@@ -1,11 +1,11 @@
 version: '3'
 services:
-  web:
+  yopinoji.info:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - '3000:3000'
     command: npm run dev
     volumes:
       - /usr/src/node_modules
