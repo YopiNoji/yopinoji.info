@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: yopinoji.info
     ports:
       - '3000:3000'
     command: npm run dev
