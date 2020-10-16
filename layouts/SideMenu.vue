@@ -83,13 +83,19 @@ export default {
 }
 
 .link {
-  position: fixed;
-  bottom: 2%;
-  left: 50%;
-  margin-right: 50%;
+  display: flex;
   font-size: 20px;
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+  margin: auto;
 }
 .icon {
-  padding: 5px;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+.icon svg {
+  color: black;
 }
 </style>
